@@ -1,0 +1,41 @@
+.register-main-d {
+    display: flex;
+    flex-direction: column;
+    width: 90%; 
+    max-width: 400px; 
+    height: 40%; 
+    background-color: rgb(8, 128, 233);
+    border-radius: 20px;
+    padding: 20px; 
+    box-sizing: border-box;   
+    /* justify-content:last baseline;  */
+    align-items: center;
+}
+.inp-reg-d {
+    margin-top: 10px;
+    width: 100%; 
+    max-width: 300px;
+    padding: 10px ;
+    border-radius: 20px;
+}
+.btn-reg-d{
+    margin-top: 10px;
+    width: 50%; 
+    max-width: 300px; 
+    padding: 10px ;
+}
+.btn-reg-d:hover{
+    border-radius: 20px;
+}
+.styled-select-d {
+  margin-top: 10px;
+  width: 50%; 
+  width: 90%;
+  padding: 10px;
+  border-radius:20px;
+  border: 2px solid #007bff;  
+  color: #333;
+  font-size: 16px;
+  cursor: pointer;
+}
+
