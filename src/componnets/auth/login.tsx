@@ -5,10 +5,17 @@ import React, { useEffect, useState } from 'react'
 // import { useAppDispatch, useAppSelector } from '../../redux/store';
 import { NavLink, useNavigate } from 'react-router-dom';
 import '../../css/login.css'
+import { socket } from '../../main';
 
 export default function Login() {
 //   const dispatch = useAppDispatch();
 //   const { user } = useAppSelector((state) => state.user);
+const kkk = 11111
+  socket.emit("newvote",kkk)
+  socket.on("newvote2",(www)=>{
+    console.log(www)
+    console.log("new vote2")
+  })
   const navigate = useNavigate()
   const [name, setUsername] = useState("");
   const [password, setPassword] = useState("");

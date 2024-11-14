@@ -33,3 +33,11 @@
     width: 20%;        
     align-items: center;
 }
+.btn-attack{    
+    margin-top: 10px;
+    font-size: 20px;
+    width: 10%;
+    height: 6%;  
+    cursor:grab;  
+    background-color: rgb(219, 4, 75);
+}
