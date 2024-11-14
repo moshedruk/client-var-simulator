@@ -1,9 +1,9 @@
 
 
-import React, { useEffect, useState } from 'react'
+import React, {useState } from 'react'
 // import { fetchlogin } from '../../redux/slices/userSlice';
 // import { useAppDispatch, useAppSelector } from '../../redux/store';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import '../../css/login.css'
 import { socket } from '../../main';
 
@@ -16,22 +16,9 @@ const kkk = 11111
     console.log(www)
     console.log("new vote2")
   })
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   const [name, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
-//   useEffect(() => {
-//     if (!user?._id) return
-//     navigate('/votes')
-//   }, [user]);
-
-//   useEffect(() => {
-//     if (user?._id) {
-//         navigate('/votes')
-//     }
-//   }, []);
-  
-
   return (
 
     <div className='login'>
@@ -42,8 +29,7 @@ const kkk = 11111
         placeholder="User Name"
         value={name}
         onChange={(e) => setUsername(e.target.value)}
-      />
-      
+      />      
       <input
       className='inp'
         type="password"

@@ -6,9 +6,9 @@ import { useAppDispatch, useAppSelector } from '../../redux/store';
 import { fetchgetOrganizition, fetchgetOrganizitionbyID } from '../../redux/slice/getOrg';
 
 export default function Registerdefensive() {
-    const navigate = useNavigate();
-    const dispatch = useAppDispatch();
-    const [username, setUsername] = useState("");
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  const [username, setUsername] = useState("");
   const [name, setname] = useState("");
   const [password, setPassword] = useState("");
   const [selectedOption, setSelectedOption] = useState('');
