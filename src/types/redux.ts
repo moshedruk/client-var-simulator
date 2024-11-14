@@ -12,5 +12,20 @@ export enum DataStatus {
 export interface orgState {
     error:string | null;
     status :DataStatus
-    org :null | Iorganizition
+    org : Iorganizition[]
+    myOrg:Iorganizition | null
+}
+
+export interface playerState {
+    position:string | null    
+}
+
+export enum playerStatus {
+    attack = "attack",
+    protection ='IDF'
+    
+    
+    
+    
+    
 }

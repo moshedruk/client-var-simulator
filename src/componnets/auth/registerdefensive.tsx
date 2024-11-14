@@ -1,18 +1,32 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { loction } from '../../enum/enumIDF';
 import '../../css/registerdefensiv.css'
+import { useAppDispatch, useAppSelector } from '../../redux/store';
+import { fetchgetOrganizition, fetchgetOrganizitionbyID } from '../../redux/slice/getOrg';
 
 export default function Registerdefensive() {
     const navigate = useNavigate();
-  const [name, setUsername] = useState("");
+    const dispatch = useAppDispatch();
+    const [username, setUsername] = useState("");
+  const [name, setname] = useState("");
   const [password, setPassword] = useState("");
   const [selectedOption, setSelectedOption] = useState('');
+  const { position } = useAppSelector((state) => state.positionplayer);
+  const { org } = useAppSelector((state) => state.organizition);
+  console.log(position)
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const value = event.target.value;
-    setSelectedOption(value);
+    setname(value);
     console.log('Selected option:', value);
   };
+  const getMyOrganization = async () =>{
+    dispatch(fetchgetOrganizitionbyID({name}))
+    navigate("/defensive");
+  }
+  useEffect(() => {
+    dispatch(fetchgetOrganizition({position}))
+ }, []);
     return (
         <div className='register-main-d'>      
           <input
@@ -31,7 +45,9 @@ export default function Registerdefensive() {
           />
     <select className="styled-select-d" onChange={handleSelectChange}>     
       <option value="" disabled selected hidden> organizition ▼</option>
-      <option value="IDF"> IDF </option>            
+      {org.map((org, index) => (
+          <option key={index} value={org.name}>{org.name}</option>
+        ))}          
       </select>
 
           <select className="styled-select-d" onChange={handleSelectChange}>     
@@ -41,7 +57,7 @@ export default function Registerdefensive() {
           <option value={loction.IDFSouth}>IDFSouth</option> 
           <option value={loction.IDFWestBank}>IDFWestBank</option>      
           </select>
-          <button className='btn-reg-d'>
+          <button className='btn-reg-d' onClick={getMyOrganization}>
         register
       </button>
     </div>

@@ -9,6 +9,8 @@ import Register from './componnets/auth/registerattacking'
 import Newregister from './componnets/page/newregister'
 import Registerattacking from './componnets/auth/registerattacking'
 import Registerdefensive from './componnets/auth/registerdefensive'
+import Realtimedataatackt from './componnets/page/realtimedataatackt'
+import Realtimedatadefensive from './componnets/page/realtimedatadefensive'
 // import Register from './componnets/auth/register'
 function App() {
   const [count, setCount] = useState(0)
@@ -21,9 +23,8 @@ function App() {
         <Route path='register' element ={<Newregister/>} />
         <Route path='register/defensive' element ={<Registerdefensive/>} />
         <Route path='register/attacking' element ={<Registerattacking/>} />
-        {/* <Route path='votes' element ={<Votes/>} />
-        <Route path='addcandidate' element ={<Addcandidate/>} />
-        <Route path='Statistics' element ={<Statistics/>} /> */}
+        <Route path='/attacking' element ={<Realtimedataatackt/>} />
+        <Route path='defensive' element ={<Realtimedatadefensive/>} />        
         <Route path="/" element={<Navigate to={"/login"} />} />
         </Routes>   
       </div>
